@@ -2,20 +2,20 @@
 
 # Nexmon CSI Installer with crontab resume support
 # For Raspberry Pi 3B+/4 (kernel 4.19 or 5.4)
-# Save this as: install_nexmon_csi.sh
-# Run with: sudo bash install_nexmon_csi.sh
+# Save this as: setup.sh
+# Run with: sudo bash setup.sh
 
 set -e
 INSTALL_FLAG="/home/pi/.nexmon_csi_step"
 
 function add_cron_restart() {
     echo "📌 Setting up crontab for auto-resume after reboot..."
-    (crontab -l 2>/dev/null; echo "@reboot /bin/bash /home/pi/install_nexmon_csi.sh >> /home/pi/nexmon_install.log 2>&1") | crontab -
+    (crontab -l 2>/dev/null; echo "@reboot /bin/bash /home/pi/setup.sh >> /home/pi/nexmon_install.log 2>&1") | crontab -
 }
 
 function remove_cron_restart() {
     echo "🧹 Removing crontab entry..."
-    crontab -l | grep -v 'install_nexmon_csi.sh' | crontab -
+    crontab -l | grep -v 'setup.sh' | crontab -
 }
 
 # 단계별 설치 진행
