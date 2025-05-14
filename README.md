@@ -3,4 +3,4 @@
 Environment
 |WiFi Chip|WiFi Standard|OS|Device|
 |---------|-------------|--|------|
-|BCM2712|IEEE 802.11ac|Raspberry Pi Os|Raspberry Pi 5|
+|BCM43455|IEEE 802.11b|Raspberry Pi OS Lite (32-bit)|Raspberry Pi 3B+|
